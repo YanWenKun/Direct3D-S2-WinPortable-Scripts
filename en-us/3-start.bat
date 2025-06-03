@@ -14,6 +14,7 @@ rem set HTTPS_PROXY=http://localhost:1080
 
 @REM This command will set PATH environment variable.
 set PATH=%PATH%;%~dp0\MinGit\cmd;%~dp0\python_standalone\Scripts
+set VCPKG_ROOT=%~dp0\vcpkg
 
 @REM This command will let the .pyc files to be stored in one place.
 set PYTHONPYCACHEPREFIX=%~dp0\pycache
