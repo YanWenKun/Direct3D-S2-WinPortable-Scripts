@@ -21,7 +21,7 @@ if %errorlevel% neq 0 (
 
 echo Installing sparsehash via vcpkg...
 
-git clone https://github.com/Microsoft/vcpkg.git vcpkg
+git clone --depth=1 https://github.com/Microsoft/vcpkg.git vcpkg
 pushd vcpkg
 .\bootstrap-vcpkg.bat
 .\vcpkg install sparsehash:x64-windows
