@@ -19,24 +19,33 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-echo Compile-installing TorchSparse...
+echo Installing spconv...
 
-.\python_standalone\python.exe -s -m pip install ^
-git+https://github.com/mit-han-lab/torchsparse.git
+.\python_standalone\python.exe -s -m pip install spconv-cu126
 
 if %errorlevel% neq 0 (
-    echo Failed to compile-install TorchSparse!
+    echo Failed to install spconv!
     goto :end
 )
 
-echo Compile-installing Direct3D-S2...
+@REM echo Compile-installing TorchSparse...
 
-.\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
+@REM .\python_standalone\python.exe -s -m pip install ^
+@REM git+https://github.com/mit-han-lab/torchsparse.git
 
-if %errorlevel% neq 0 (
-    echo Failed to compile-install Direct3D-S2!
-    goto :end
-)
+@REM if %errorlevel% neq 0 (
+@REM     echo Failed to compile-install TorchSparse!
+@REM     goto :end
+@REM )
+
+@REM echo Compile-installing Direct3D-S2...
+
+@REM .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
+
+@REM if %errorlevel% neq 0 (
+@REM     echo Failed to compile-install Direct3D-S2!
+@REM     goto :end
+@REM )
 
 echo Compile-install Finished!
 

@@ -2,6 +2,7 @@
 setlocal
 chcp 65001
 
+set SPARSE_BACKEND=spconv
 set SPARSE_ATTN_BACKEND=flash_attn
 
 @REM 如需配置代理，取消注释（移除行首的 'rem '）并编辑下两行环境变量。

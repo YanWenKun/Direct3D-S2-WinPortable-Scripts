@@ -20,24 +20,33 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-echo 编译安装 TorchSparse...
+echo 安装 spconv...
 
-.\python_standalone\python.exe -s -m pip install ^
-git+https://ghfast.top/https://github.com/mit-han-lab/torchsparse.git
+.\python_standalone\python.exe -s -m pip install spconv-cu126
 
 if %errorlevel% neq 0 (
-    echo 编译安装 TorchSparse 失败！
+    echo 安装 spconv 失败！
     goto :end
 )
 
-echo 编译安装 Direct3D-S2...
+@REM echo 编译安装 TorchSparse...
 
-.\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
+@REM .\python_standalone\python.exe -s -m pip install ^
+@REM git+https://ghfast.top/https://github.com/mit-han-lab/torchsparse.git
 
-if %errorlevel% neq 0 (
-    echo 编译安装 Direct3D-S2 失败！
-    goto :end
-)
+@REM if %errorlevel% neq 0 (
+@REM     echo 编译安装 TorchSparse 失败！
+@REM     goto :end
+@REM )
+
+@REM echo 编译安装 Direct3D-S2...
+
+@REM .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
+
+@REM if %errorlevel% neq 0 (
+@REM     echo 编译安装 Direct3D-S2 失败！
+@REM     goto :end
+@REM )
 
 echo 编译安装完成！
 
