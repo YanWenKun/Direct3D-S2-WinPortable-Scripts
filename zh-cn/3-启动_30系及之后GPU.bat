@@ -2,6 +2,7 @@
 setlocal
 chcp 65001
 
+set ATTN_BACKEND=flash_attn
 set SPARSE_BACKEND=spconv
 set SPARSE_ATTN_BACKEND=flash_attn
 

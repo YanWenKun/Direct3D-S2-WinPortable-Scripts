@@ -1,6 +1,7 @@
 @echo on
 setlocal
 
+set ATTN_BACKEND=xformers
 set SPARSE_BACKEND=spconv
 set SPARSE_ATTN_BACKEND=xformers
 
