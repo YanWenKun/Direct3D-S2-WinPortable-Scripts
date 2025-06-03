@@ -20,6 +20,16 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+echo 编译安装 TorchSparse...
+
+.\python_standalone\python.exe -s -m pip install ^
+git+https://ghfast.top/https://github.com/mit-han-lab/torchsparse.git
+
+if %errorlevel% neq 0 (
+    echo 编译安装 TorchSparse 失败！
+    goto :end
+)
+
 echo 编译安装 Direct3D-S2...
 
 .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2

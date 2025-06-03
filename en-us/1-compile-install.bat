@@ -19,6 +19,16 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+echo Compile-installing TorchSparse...
+
+.\python_standalone\python.exe -s -m pip install ^
+git+https://github.com/mit-han-lab/torchsparse.git
+
+if %errorlevel% neq 0 (
+    echo Failed to compile-install TorchSparse!
+    goto :end
+)
+
 echo Compile-installing Direct3D-S2...
 
 .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
