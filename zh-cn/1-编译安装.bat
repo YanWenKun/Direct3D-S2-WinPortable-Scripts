@@ -23,7 +23,7 @@ if %errorlevel% neq 0 (
 echo 编译安装 TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^
-git+https://ghfast.top/https://github.com/mit-han-lab/torchsparse.git
+git+https://gh-proxy.com/https://github.com/mit-han-lab/torchsparse.git
 
 if %errorlevel% neq 0 (
     echo 编译安装 TorchSparse 失败！
