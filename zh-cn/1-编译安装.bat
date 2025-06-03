@@ -24,7 +24,7 @@ if %errorlevel% neq 0 (
 echo 编译安装 TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^
-git+https://gh-proxy.com/https://github.com/Deathdadev/torchsparse.git
+https://gh-proxy.com/https://github.com/Deathdadev/torchsparse/releases/download/v2.1.0-windows/torchsparse-2.1.0-cp310-cp310-win_amd64.whl
 
 if %errorlevel% neq 0 (
     echo 编译安装 TorchSparse 失败！
