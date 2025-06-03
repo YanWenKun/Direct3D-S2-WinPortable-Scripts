@@ -4,7 +4,7 @@ chcp 65001
 
 @REM 编辑为你的 GPU 对应架构
 @REM 修改时无需保留 "+PTX" ，其用于前向兼容，防止用户忘了该步骤。
-set TORCH_CUDA_ARCH_LIST=6.1+PTX;8.6;8.9;10.0
+set TORCH_CUDA_ARCH_LIST=6.1+PTX;8.6;8.9+PTX
 
 @REM 使用国内 PyPI 源
 set PIP_INDEX_URL=https://mirrors.cernet.edu.cn/pypi/web/simple
