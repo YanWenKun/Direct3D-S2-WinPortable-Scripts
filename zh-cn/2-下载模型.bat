@@ -31,6 +31,9 @@ echo 正在下载 Direct3D-S2 V1.1 模型...
 .\python_standalone\Scripts\huggingface-cli.exe download ^
 "wushuang98/Direct3D-S2" --include "direct3d-s2-v-1-1/*"
 
+.\python_standalone\Scripts\huggingface-cli.exe download ^
+"ZhengPeng7/BiRefNet"
+
 echo 脚本执行完毕，如有文件不完整，请重新运行脚本
 
 endlocal
