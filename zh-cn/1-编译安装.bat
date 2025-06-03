@@ -29,15 +29,15 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-@REM echo 编译安装 TorchSparse...
+echo 编译安装 TorchSparse...
 
-@REM .\python_standalone\python.exe -s -m pip install ^
-@REM git+https://ghfast.top/https://github.com/mit-han-lab/torchsparse.git
+.\python_standalone\python.exe -s -m pip install ^
+git+https://ghfast.top/https://github.com/mit-han-lab/torchsparse.git
 
-@REM if %errorlevel% neq 0 (
-@REM     echo 编译安装 TorchSparse 失败！
-@REM     goto :end
-@REM )
+if %errorlevel% neq 0 (
+    echo 编译安装 TorchSparse 失败！
+    goto :end
+)
 
 @REM echo 编译安装 Direct3D-S2...
 

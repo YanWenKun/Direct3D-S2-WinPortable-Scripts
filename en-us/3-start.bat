@@ -2,7 +2,7 @@
 setlocal
 
 set ATTN_BACKEND=flash_attn
-set SPARSE_BACKEND=spconv
+set SPARSE_BACKEND=torchsparse
 set SPARSE_ATTN_BACKEND=flash_attn
 
 @REM To set proxy, edit and uncomment the two lines below (remove 'rem ' in the beginning of line).

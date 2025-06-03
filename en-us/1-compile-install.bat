@@ -28,15 +28,15 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-@REM echo Compile-installing TorchSparse...
+echo Compile-installing TorchSparse...
 
-@REM .\python_standalone\python.exe -s -m pip install ^
-@REM git+https://github.com/mit-han-lab/torchsparse.git
+.\python_standalone\python.exe -s -m pip install ^
+git+https://github.com/mit-han-lab/torchsparse.git
 
-@REM if %errorlevel% neq 0 (
-@REM     echo Failed to compile-install TorchSparse!
-@REM     goto :end
-@REM )
+if %errorlevel% neq 0 (
+    echo Failed to compile-install TorchSparse!
+    goto :end
+)
 
 @REM echo Compile-installing Direct3D-S2...
 
