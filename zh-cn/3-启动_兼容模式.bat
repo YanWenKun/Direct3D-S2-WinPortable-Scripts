@@ -3,7 +3,7 @@ setlocal
 chcp 65001
 
 set ATTN_BACKEND=xformers
-set SPARSE_BACKEND=spconv
+set SPARSE_BACKEND=torchsparse
 set SPARSE_ATTN_BACKEND=xformers
 
 @REM 如需配置代理，取消注释（移除行首的 'rem '）并编辑下两行环境变量。
