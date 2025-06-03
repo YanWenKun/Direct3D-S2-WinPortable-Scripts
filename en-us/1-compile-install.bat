@@ -22,7 +22,7 @@ if %errorlevel% neq 0 (
 echo Compile-installing TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^
-git+https://github.com/mit-han-lab/torchsparse.git
+git+https://github.com/Deathdadev/torchsparse.git
 
 if %errorlevel% neq 0 (
     echo Failed to compile-install TorchSparse!
