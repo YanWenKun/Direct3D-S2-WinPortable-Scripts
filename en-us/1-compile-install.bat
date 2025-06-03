@@ -9,6 +9,7 @@ set TORCH_CUDA_ARCH_LIST=6.1+PTX;8.6;8.9+PTX
 rem set PIP_INDEX_URL=https://mirrors.cernet.edu.cn/pypi/web/simple
 
 set PATH=%PATH%;%~dp0\MinGit\cmd;%~dp0\python_standalone\Scripts
+set VCPKG_ROOT=%~dp0\vcpkg
 
 echo Compile-installing voxelize...
 
@@ -16,20 +17,6 @@ echo Compile-installing voxelize...
 
 if %errorlevel% neq 0 (
     echo Failed to compile-install voxelize!
-    goto :end
-)
-
-echo Installing sparsehash via vcpkg...
-
-git clone --depth=1 https://github.com/Microsoft/vcpkg.git vcpkg
-pushd vcpkg
-.\bootstrap-vcpkg.bat
-.\vcpkg install sparsehash:x64-windows
-set VCPKG_ROOT=%~dp0
-popd
-
-if %errorlevel% neq 0 (
-    echo Failed to install sparsehash via vcpkg!
     goto :end
 )
 
