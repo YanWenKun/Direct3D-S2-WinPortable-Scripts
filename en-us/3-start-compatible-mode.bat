@@ -22,6 +22,9 @@ set PYTHONPYCACHEPREFIX=%~dp0\pycache
 @REM This command redirects HuggingFace-Hub to download model files in this folder.
 set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 
+@REM This command redirects Pytorch Hub to download model files in this folder.
+set TORCH_HOME=%~dp0\TorchHome
+
 @REM ===========================================================================
 
 cd Direct3D-S2

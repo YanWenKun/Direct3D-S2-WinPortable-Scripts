@@ -14,7 +14,11 @@ set PIP_INDEX_URL=https://mirrors.cernet.edu.cn/pypi/web/simple
 
 set HF_HUB_CACHE=%~dp0\HuggingFaceHub
 
+set TORCH_HOME=%~dp0\TorchHome
+
 set PATH=%PATH%;%~dp0\MinGit\cmd;%~dp0\python_standalone\Scripts
+
+set PYTHONPYCACHEPREFIX=%~dp0\pycache
 
 @REM 重新安装 hf-hub
 if not exist ".\python_standalone\Scripts\.hf-reinstalled" (
@@ -33,6 +37,8 @@ echo 正在下载 Direct3D-S2 V1.1 模型...
 
 .\python_standalone\Scripts\huggingface-cli.exe download ^
 "ZhengPeng7/BiRefNet"
+
+.\python_standalone\python.exe -s -c "import torch; torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14_reg');
 
 echo 脚本执行完毕，如有文件不完整，请重新运行脚本
 
