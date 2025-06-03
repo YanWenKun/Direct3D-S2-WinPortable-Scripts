@@ -3,7 +3,7 @@ setlocal
 
 @REM Edit this to your GPU arch.
 @REM You don't need to add the "+PTX". Here it works as a fail-safe (providing forward compatibility).
-set TORCH_CUDA_ARCH_LIST=6.1+PTX;8.6;8.9;12.0
+set TORCH_CUDA_ARCH_LIST=6.1+PTX;8.6;8.9;10.0
 
 @REM To set mirror site for PIP, uncomment and edit the line below.
 rem set PIP_INDEX_URL=https://mirrors.cernet.edu.cn/pypi/web/simple
