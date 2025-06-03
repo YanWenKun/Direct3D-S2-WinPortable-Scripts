@@ -12,7 +12,7 @@ set PATH=%PATH%;%~dp0\MinGit\cmd;%~dp0\python_standalone\Scripts
 
 echo Compile-installing voxelize...
 
-.\python_standalone\python.exe -s -m pip install .\Direct3D-S2\third-party\voxelize
+.\python_standalone\python.exe -s -m pip install .\Direct3D-S2\third_party\voxelize
 
 if %errorlevel% neq 0 (
     echo Failed to compile-install voxelize!
