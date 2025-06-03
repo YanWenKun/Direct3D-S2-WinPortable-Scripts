@@ -30,6 +30,18 @@ if errorlevel 1 (
     goto :error
 )
 
+REM 检查 git remote 地址是否以 https://github.com 开头并替换为国内代理
+echo 正在检查 git remote 地址...
+for /f "delims=" %%i in ('git remote get-url origin') do set "remote_url=%%i"
+echo 当前 remote 地址: %remote_url%
+
+echo %remote_url%|findstr /r /c:"^https://github.com" >nul
+if not errorlevel 1 (
+    echo 检测到 GitHub 地址，添加代理前缀...
+    git remote set-url origin https://gh-proxy.com/%remote_url%
+    echo 新 remote 地址: https://gh-proxy.com/%remote_url%
+)
+
 echo 正在执行 git pull...
 git pull
 if errorlevel 1 (
@@ -53,6 +65,18 @@ git reset --hard
 if errorlevel 1 (
     echo 错误： git reset --hard 执行失败。
     goto :error
+)
+
+REM 检查 git remote 地址是否以 https://github.com 开头并替换为国内代理
+echo 正在检查 git remote 地址...
+for /f "delims=" %%i in ('git remote get-url origin') do set "remote_url=%%i"
+echo 当前 remote 地址: %remote_url%
+
+echo %remote_url%|findstr /r /c:"^https://github.com" >nul
+if not errorlevel 1 (
+    echo 检测到 GitHub 地址，添加代理前缀...
+    git remote set-url origin https://gh-proxy.com/%remote_url%
+    echo 新 remote 地址: https://gh-proxy.com/%remote_url%
 )
 
 echo 正在执行 git pull...
