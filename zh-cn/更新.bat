@@ -30,7 +30,7 @@ if errorlevel 1 (
     goto :error
 )
 
-REM 检查 git remote 地址是否以 https://github.com 开头并替换为国内代理
+REM 检查 git 仓库远程地址并替换为国内代理
 echo 正在检查 git remote 地址...
 for /f "delims=" %%i in ('git remote get-url origin') do set "remote_url=%%i"
 echo 当前 remote 地址: %remote_url%
@@ -67,7 +67,7 @@ if errorlevel 1 (
     goto :error
 )
 
-REM 检查 git remote 地址是否以 https://github.com 开头并替换为国内代理
+REM 检查 git 仓库远程地址并替换为国内代理
 echo 正在检查 git remote 地址...
 for /f "delims=" %%i in ('git remote get-url origin') do set "remote_url=%%i"
 echo 当前 remote 地址: %remote_url%

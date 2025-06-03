@@ -20,15 +20,6 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-echo 安装 spconv...
-
-.\python_standalone\python.exe -s -m pip install spconv-cu126
-
-if %errorlevel% neq 0 (
-    echo 安装 spconv 失败！
-    goto :end
-)
-
 echo 编译安装 TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^

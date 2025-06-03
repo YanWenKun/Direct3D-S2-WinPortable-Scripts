@@ -19,15 +19,6 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-echo Installing spconv...
-
-.\python_standalone\python.exe -s -m pip install spconv-cu126
-
-if %errorlevel% neq 0 (
-    echo Failed to install spconv!
-    goto :end
-)
-
 echo Compile-installing TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^
