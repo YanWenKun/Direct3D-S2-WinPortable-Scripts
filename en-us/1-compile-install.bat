@@ -19,6 +19,20 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+echo Installing sparsehash via vcpkg...
+
+git clone https://github.com/Microsoft/vcpkg.git vcpkg
+pushd vcpkg
+.\bootstrap-vcpkg.bat
+.\vcpkg install sparsehash:x64-windows
+set VCPKG_ROOT=%~dp0
+popd
+
+if %errorlevel% neq 0 (
+    echo Failed to install sparsehash via vcpkg!
+    goto :end
+)
+
 echo Compile-installing TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^

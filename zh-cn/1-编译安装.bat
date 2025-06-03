@@ -20,6 +20,20 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+echo 通过 vcpkg 安装 sparsehash...
+
+git clone https://gh-proxy.com/https://github.com/Microsoft/vcpkg.git vcpkg
+pushd vcpkg
+.\bootstrap-vcpkg.bat
+.\vcpkg install sparsehash:x64-windows
+set VCPKG_ROOT=%~dp0
+popd
+
+if %errorlevel% neq 0 (
+    echo 通过 vcpkg 安装 sparsehash 失败！
+    goto :end
+)
+
 echo 编译安装 TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^
