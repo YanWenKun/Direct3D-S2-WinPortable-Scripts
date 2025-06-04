@@ -4,7 +4,7 @@ chcp 65001
 
 @REM 编辑为你的 GPU 对应架构
 @REM 修改时无需保留 "+PTX" ，其用于前向兼容，防止用户忘了该步骤。
-set TORCH_CUDA_ARCH_LIST=6.1+PTX;8.6;8.9+PTX
+set TORCH_CUDA_ARCH_LIST=6.1+PTX;7.5;8.6;8.9+PTX
 
 @REM 使用国内 PyPI 源
 set PIP_INDEX_URL=https://mirrors.cernet.edu.cn/pypi/web/simple
@@ -21,13 +21,13 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-echo 编译安装 TorchSparse...
+echo 安装 TorchSparse...
 
 .\python_standalone\python.exe -s -m pip install ^
 https://gh-proxy.com/https://github.com/Deathdadev/torchsparse/releases/download/v2.1.0-windows/torchsparse-2.1.0-cp310-cp310-win_amd64.whl
 
 if %errorlevel% neq 0 (
-    echo 编译安装 TorchSparse 失败！
+    echo 安装 TorchSparse 失败！
     goto :end
 )
 
