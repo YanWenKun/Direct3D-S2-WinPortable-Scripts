@@ -38,7 +38,7 @@ echo 正在下载 Direct3D-S2 V1.1 模型...
 .\python_standalone\Scripts\huggingface-cli.exe download ^
 "ZhengPeng7/BiRefNet"
 
-.\python_standalone\python.exe -s -c "import torch; torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14_reg');
+.\python_standalone\python.exe -s -c "import torch; torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14_reg');"
 
 echo 脚本执行完毕，如有文件不完整，请重新运行脚本
 

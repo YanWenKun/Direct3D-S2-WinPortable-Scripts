@@ -37,7 +37,7 @@ echo Downloading Direct3D-S2 V1.1 models from HuggingFace...
 .\python_standalone\Scripts\huggingface-cli.exe download ^
 "ZhengPeng7/BiRefNet"
 
-.\python_standalone\python.exe -s -c "import torch; torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14_reg');
+.\python_standalone\python.exe -s -c "import torch; torch.hub.load('facebookresearch/dinov2', 'dinov2_vitl14_reg');"
 
 echo The script has finished executing. If any files are incomplete, please rerun the script.
 
