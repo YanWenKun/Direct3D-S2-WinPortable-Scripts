@@ -30,14 +30,14 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-@REM echo Compile-installing Direct3D-S2...
+echo Compile-installing Direct3D-S2...
 
-@REM .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
+.\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
 
-@REM if %errorlevel% neq 0 (
-@REM     echo Failed to compile-install Direct3D-S2!
-@REM     goto :end
-@REM )
+if %errorlevel% neq 0 (
+    echo Failed to compile-install Direct3D-S2!
+    goto :end
+)
 
 echo Compile-install Finished!
 

@@ -31,14 +31,14 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
-@REM echo 编译安装 Direct3D-S2...
+echo 编译安装 Direct3D-S2...
 
-@REM .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
+.\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
 
-@REM if %errorlevel% neq 0 (
-@REM     echo 编译安装 Direct3D-S2 失败！
-@REM     goto :end
-@REM )
+if %errorlevel% neq 0 (
+    echo 编译安装 Direct3D-S2 失败！
+    goto :end
+)
 
 echo 编译安装完成！
 
