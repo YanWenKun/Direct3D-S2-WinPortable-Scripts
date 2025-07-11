@@ -30,6 +30,18 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+echo Compile-installing utils3d...
+
+.\python_standalone\python.exe -s -m pip uninstall --yes utils3d
+
+.\python_standalone\python.exe -s -m pip install ^
+git+https://github.com/EasternJournalist/utils3d.git#egg=utils3d
+
+if %errorlevel% neq 0 (
+    echo Failed to install utils3d!
+    goto :end
+)
+
 echo Compile-installing Direct3D-S2...
 
 .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2

@@ -31,6 +31,18 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+echo 编译安装 utils3d...
+
+.\python_standalone\python.exe -s -m pip uninstall --yes utils3d
+
+.\python_standalone\python.exe -s -m pip install ^
+git+https://gh-proxy.com/https://github.com/EasternJournalist/utils3d.git#egg=utils3d
+
+if %errorlevel% neq 0 (
+    echo 编译安装 utils3d 失败！
+    goto :end
+)
+
 echo 编译安装 Direct3D-S2...
 
 .\python_standalone\python.exe -s -m pip install -e .\Direct3D-S2
